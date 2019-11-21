@@ -11,11 +11,12 @@ export default {
     },
     plugins: [
         babel({
-            plugins: ['external-helpers'],
+            plugins: ['@babel/plugin-transform-runtime'],
             exclude: 'node_modules/**',
             runtimeHelpers: true,
         }),
         uglify(),
     ],
-    external: id => /lodash/.test(id) || Object.keys(peerDependencies).includes(id),
+    external: id =>
+        /lodash/.test(id) || Object.keys(peerDependencies).includes(id),
 };

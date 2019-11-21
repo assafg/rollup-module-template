@@ -1,20 +1,14 @@
 {
     "presets": [
-        ["env", {
-            "modules": false,
-            "targets": {
-                "browsers": ["last 2 versions", "ie >= 11"]
+        "@babel/preset-react",
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "node": "current"
+                }
             }
-        }],
-        "stage-1",
-        "react"
+        ]
     ],
-
-    "env": {
-        "test": {
-            "plugins": [
-                "transform-es2015-modules-commonjs"
-            ]
-        }
-    }
+    "plugins": ["@babel/plugin-transform-parameters"]
 }
